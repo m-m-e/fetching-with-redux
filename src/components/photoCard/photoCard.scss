@@ -1,0 +1,16 @@
+
+.photo__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+
+  .photo__thumbnail {
+    margin: 5px;
+  }
+
+  .photo__title {
+    width: 150px;
+    text-align: center;
+  }
+}

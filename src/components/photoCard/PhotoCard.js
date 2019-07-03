@@ -1,9 +1,10 @@
 import React from 'react';
+import './photoCard.scss';
 
 const PhotoCard = props => {
   const { photo } = props;
   return (
-    <li className="photo__card">
+    <li className="photo__card col s12 m4">
       <img 
         className="photo__thumbnail" 
         src={photo.thumbnailUrl} 

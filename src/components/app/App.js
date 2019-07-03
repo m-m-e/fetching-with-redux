@@ -3,6 +3,8 @@ import { PhotoList } from '../photoList/PhotoList';
 import { SortButton } from '../sortButton/SortButton';
 import { PageNav } from '../pageNav/PageNav';
 import { fetchPhotos } from '../../services/fetchPhotos';
+import '../../materialize-src/sass/materialize.scss';
+
 class App extends Component {
   constructor(props){
     super(props);
