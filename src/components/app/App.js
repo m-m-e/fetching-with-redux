@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { PhotoList } from '../photoList/PhotoList';
-import { SortButton } from '../sortButton/SortButton';
-import { PageNav } from '../pageNav/PageNav';
+import { Home } from '../home/Home';
+import { Photo } from '../photo/Photo';
 import { fetchPhotos } from '../../services/fetchPhotos';
+import { Router } from '@reach/router';
 
 class App extends Component {
   constructor(props){
@@ -85,27 +85,22 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="header">
-          <SortButton
-          order={order}
-          changePhotoOrder={changePhotoOrder}
-        />
-        </header>
-        <PhotoList
-          order={order}
-          photoData={photoDataArray}
-          currentPage={currentPage}
-          maxPerPage={maxPerPage}
-        />
-        <footer className="footer">
-          <PageNav 
+        <Router>
+          <Home
+            path="/"
+            order={order}
             photoData={photoDataArray}
             currentPage={currentPage}
-            choosePage={choosePage}
             maxPerPage={maxPerPage}
+            choosePage={choosePage}
             goToPage={goToPage}
+            changePhotoOrder={changePhotoOrder}
           />
-        </footer>
+          <Photo 
+            path="/photos/:id"
+            photoData={photoDataArray}
+          />
+        </Router>
       </div>
     );
   };
