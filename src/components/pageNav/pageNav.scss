@@ -1,0 +1,20 @@
+.page__nav{
+  width: 50%;
+  margin: auto;
+
+  .nav__list{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav__list-item{
+    color: grey;
+    cursor: pointer;
+  }
+
+  .current{
+    text-decoration: underline;
+  }
+}

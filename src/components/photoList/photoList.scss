@@ -1,5 +1,9 @@
 .photo__list__container {
-  margin: 50px;
+  margin: auto;
   height: 100%;
   width: 100%;
+  
+  .photo__list{
+    padding: 0px;
+  }
 }
