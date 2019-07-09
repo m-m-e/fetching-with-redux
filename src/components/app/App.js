@@ -10,13 +10,14 @@ class App extends Component {
     this.state = {
       isFetching: false,
       photoData: {},
-      view: 'ascending',
+      order: 'ascending',
       currentPage: 2,
       maxPerPage: 6
     }
     this.getPhotos = this.getPhotos.bind(this);
     this.choosePage = this.choosePage.bind(this);
     this.goToPage = this.goToPage.bind(this);
+    this.changePhotoOrder = this.changePhotoOrder.bind(this);
   }
 
   componentDidMount(){
@@ -68,17 +69,30 @@ class App extends Component {
     }
   }
 
+  changePhotoOrder(){
+    const currentOrder = this.state.order;
+    if (currentOrder === 'ascending'){
+      this.setState({order: 'descending'});
+    } else {
+      this.setState({order: 'ascending'});
+    }
+  }
+
   render(){
-    const { photoData, currentPage, maxPerPage } = this.state;
-    const { choosePage, goToPage } = this;
+    const { photoData, currentPage, maxPerPage, order } = this.state;
+    const { choosePage, goToPage, changePhotoOrder } = this;
     const photoDataArray = Object.values(photoData);
 
     return (
       <div className="App">
         <header className="header">
-          <SortButton />
+          <SortButton
+          order={order}
+          changePhotoOrder={changePhotoOrder}
+        />
         </header>
-        <PhotoList 
+        <PhotoList
+          order={order}
           photoData={photoDataArray}
           currentPage={currentPage}
           maxPerPage={maxPerPage}
