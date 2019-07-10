@@ -1,0 +1,21 @@
+.sort__button__container{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  .sort__button{
+    margin-right: 5%;
+    width: 80px;
+    border: none;
+    background: none;
+  }
+}
+
+@media all and (min-width: 768px){
+  .sort__button__container{
+    box-sizing: border-box;
+    padding: 0 40px;
+  }
+}
