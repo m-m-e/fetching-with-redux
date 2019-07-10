@@ -1,0 +1,44 @@
+.photo__container{
+  margin: 20px;
+  height: 100vh;
+}
+.photo__title{
+  text-align: center;
+}
+.photo__title::first-letter{
+  text-transform: capitalize;
+}
+.photo__image{
+  width: 280px;
+  margin-bottom: 20px;
+}
+.list__link{
+  display: block; 
+  color: black;
+  text-align: center;
+  text-shadow: 1px 1px 2px grey;
+}
+
+@media all and (min-width: 768px){
+  .photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo__title{
+    font-size: 18px;
+  }
+  .photo__image{
+    margin-bottom: 30px;
+    width: 600px;
+  }
+}
+
+@media all and (min-width: 1024px){
+  .photo__title{
+    font-size: 24px;
+  }
+  .list__link{
+    font-size: 20px;
+  }
+}

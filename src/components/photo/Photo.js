@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import './photo.scss';
 
 const Photo = props => {
   const { id, photoData } = props;
@@ -17,7 +18,7 @@ const Photo = props => {
     <div className="photo__container">
       {chosenPhoto && 
         <div className="photo">
-          <p>{chosenPhoto[0].title}</p>
+          <p className="photo__title">{chosenPhoto[0].title}</p>
           <img
             className="photo__image"
             src={chosenPhoto[0].url}
